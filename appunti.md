@@ -147,4 +147,45 @@ GPIO----+----100k--[+ -]-GND
    1) bottone da pin a GND
 
 ## 20/3
+Laboratorio  
+GPIO da in decine di mA
+## 25/3
 
+### ELETTRICITA
+**Loop chiuso** --> lo stato viene controllato e modificato di conseguenza  
+
+#### PWM - Pulse Width Modulation
+Versione "semplice" del DAC  
+Accende e spegne velocemente seguendo un duty cycle  
+
+Dusty cicle del 100%
+```
+-------------------------  ...
+
+
+
+```
+Duty cicle 50%
+```
+-, ,-, ,-, ,-, ,-, ,-, ,-,
+ | | | | | | | | | | | | |
+ | | | | | | | | | | | | |
+ '-' '-' '-' '-' '-' '-' ' ...
+```
+Duty cicle al 30%
+```
+-,   ,-,   ,-,   ,-,   ,-, 
+ |   | |   | |   | |   | |
+ |   | |   | |   | |   | |
+ '---' '---' '---' '---' ' ...
+```
+`Veff` si dice il voltaggio equivalente alla tensione PWM erogata  
+$Veff=sqrt(Duty)$
+
+Su arduino il pin che può fare PWM è segnato con `~`  
+Si usa con `analogWrite(pin, duty);`   
+Esempio LED:
+* GPIO con PWM
+* resistenza
+* LED
+* massa
