@@ -14,6 +14,7 @@ int pin_bottone=2;
 void setup() {
   pinMode(pin_bottone, INPUT_PULLUP);
   pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600);
 }
 
 /*
@@ -23,7 +24,10 @@ Altrimenti lo spegne
 void loop() {
   if(digitalRead(pin_bottone)==0){
     digitalWrite(LED_BUILTIN, 1);
+    Serial.println("ok");
+    
   }else{
     digitalWrite(LED_BUILTIN,0);
+    Serial.println("no");
   }
 }

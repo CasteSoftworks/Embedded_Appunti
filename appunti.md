@@ -189,3 +189,29 @@ Esempio LED:
 * resistenza
 * LED
 * massa
+
+## 27/3
+
+### Laboratorio
+#### ISR - Interrupt Service Routine
+Usa:
+* GPIO
+* funzione di reazione
+* condizione
+
+Per usarlo nel `setup` o nelle funzioni che devono modificare lo stato generale mettere:  
+```
+attachInterrupt(...)
+```
+
+Il segnale sul GPIO è una cosa tipo:
+```
+         ,----HIGH----,
+         |            |
+         |            |
+         |            |
+         |            |
+---LOW---'            '---LOW---
+         ^RAISING     ^FALLING
+         ^--CHANGING--^
+```
