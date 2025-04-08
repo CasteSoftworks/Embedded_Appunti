@@ -215,3 +215,38 @@ Il segnale sul GPIO è una cosa tipo:
          ^RAISING     ^FALLING
          ^--CHANGING--^
 ```
+
+## 8/4
+
+### something-tasking
+#### Processo
+Necessita di SO con MMU e gerarchie della risorsa
+
+#### Task
+E' una funzione, non necessita di un SO, memoria condivisa (se modifica una cosa in memoria la cambia per tutti)
+
+#### Thread
+Contesto di esecuzione (PC, SP, ...)
+
+#### Preemptive vs cooperative
+**Preemptive** blocca e fa cambiare
+
+**Cooperative** non fa cambiare fino alla fine
+```
+t1 --{+++++++++++}-----------{++++}
+
+t2 --------------{+++++++++++}----------------{++++}
+
+t3 -------------------------------{+++++++++++}--------{++++}
+```
+**Cooperative con yeld** può interrompere la sua esecuzione
+! = yield
+
+```
+t1 --{++++++!           +++++}------{++++}
+
+t2 ---------{+++++++++++}----------------{++++}
+
+t3 --------------------------{++++++!         +++++}--------{++++}
+```
+Meglio evitare
